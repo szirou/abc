@@ -475,5 +475,16 @@
             </MemoryRouter>
         );
     </script>
+
+<!-- 引入 Coze Web SDK 官方 CDN -->
+<script src="https://lf-cdn.coze.cn/obj/unpkg/latest/coze/web-sdk/dist/js-umd/index.min.js"></script>
+<script>
+  // 初始化 Web SDK
+  cozeWebSDK.init({
+    projectId: '7621001597895786538',
+    // 支持同步和异步刷新 token
+    refreshToken: () => Promise.resolve('<YOUR_TOKEN>'),
+  });
+</script>
 </body>
 </html>
