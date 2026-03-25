@@ -475,15 +475,22 @@
             </MemoryRouter>
         );
     </script>
-
-<!-- 引入 Coze Web SDK 官方 CDN -->
-<script src="https://lf-cdn.coze.cn/obj/unpkg/latest/coze/web-sdk/dist/js-umd/index.min.js"></script>
+<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
 <script>
-  // 初始化 Web SDK
-  cozeWebSDK.init({
-    projectId: '7621001597895786538',
-    // 支持同步和异步刷新 token
-    refreshToken: () => Promise.resolve('<pat_0NKYR8rdJU2xOsdTtUA4DfTFOPoeW5kWvbcOhoEQjueQbo8aCNjyQTnHDUuOYdfD>'),
+  new CozeWebSDK.WebChatClient({
+    config: {
+      bot_id: '7621027039558451209',
+    },
+    componentProps: {
+      title: 'Coze',
+    },
+    auth: {
+      type: 'token',
+      token: 'pat_r8ecZp2ltenxqdSoPk53gWG7SMfLPsdhGVFdu6vTcdPfas2yCsHb7T3Fjo4QI24c',
+      onRefreshToken: function () {
+        return 'pat_r8ecZp2ltenxqdSoPk53gWG7SMfLPsdhGVFdu6vTcdPfas2yCsHb7T3Fjo4QI24c'
+      }
+    }
   });
 </script>
 </body>
